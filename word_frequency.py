@@ -6,8 +6,22 @@ STOP_WORDS = [
 
 
 def print_word_freq(file):
-    """Read in `file` and print out the frequency of words in that file."""
-    pass
+    with open(file) as praise_song:
+        words = praise_song.read()
+        words = words.lower()
+        words_list = words.split(' ')
+        words_list_copy = words_list.copy()
+        for word in words_list_copy:
+            for stop in STOP_WORDS:
+                if stop == word:
+                    words_list_copy.remove(word)
+    print(words_list_copy)
+
+
+
+
+    #pass
+
 
 
 if __name__ == "__main__":
