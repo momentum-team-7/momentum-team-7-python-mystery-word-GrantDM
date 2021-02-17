@@ -17,7 +17,7 @@ def print_word_freq(file):
                 words = words.replace(ele, "")
                 words = words.replace("\n", " ")
 
-        words_list = words.split(' ')
+        words_list = words.split()
         words_list_copy = words_list.copy()
         for word in words_list:
             if word in STOP_WORDS:
@@ -34,9 +34,12 @@ def print_word_freq(file):
                 if words_count_list[key] == index:
                     sorted_dict[key] = words_count_list[key]
 
+        for key in sorted_dict:
+            print( key, ':', sorted_dict[key])
+
         # words_count_list = sorted(words_count_list, key=words_count_list.get)
         print(words_list_copy)
-        print(sorted_dict)
+        # print(sorted_dict)
         
     #pass
 
